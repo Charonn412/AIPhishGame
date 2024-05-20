@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Simulation Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="inbox-container">
+        <header>
+            <h1>Phishing Simulation Game</h1>
+        </header>
+        <div class="email-list">
+            <div class="email-item" onclick="openEmail(1)">
+                <span class="sender">John Doe</span>
+                <span class="subject">Your account needs verification</span>
+                <span class="date">May 10</span>
+            </div>
+            <div class="email-item" onclick="openEmail(2)">
+                <span class="sender">Jane Smith</span>
+                <span class="subject">Invoice attached</span>
+                <span class="date">May 11</span>
+            </div>
+            <div class="email-item" onclick="openEmail(3)">
+                <span class="sender">Support Team</span>
+                <span class="subject">Password Reset Request</span>
+                <span class="date">May 12</span>
+            </div>
+            <div class="email-item" onclick="openEmail(4)">
+                <span class="sender">Admin</span>
+                <span class="subject">Urgent: Action Required</span>
+                <span class="date">May 13</span>
+            </div>
+        </div>
+        <div id="email-content" class="email-content">
+            <!-- Email content will be displayed here -->
+        </div>
+    </div>
+    <script>
+        function openEmail(emailId) {
+            const emailContent = document.getElementById('email-content');
+            emailContent.style.display = 'block';
+            switch(emailId) {
+                case 1:
+                    emailContent.innerHTML = `
+                        <h2>Your account needs verification</h2>
+                        <p>Dear user,</p>
+                        <p>Your account needs verification. Please click on the following link to verify your account: <a href="#">Verify Now</a></p>
+                        <p>Thank you,</p>
+                        <p>Support Team</p>
+                    `;
+                    break;
+                case 2:
+                    emailContent.innerHTML = `
+                        <h2>Invoice attached</h2>
+                        <p>Dear user,</p>
+                        <p>Please find the attached invoice for your recent purchase. If you have any questions, feel free to contact us.</p>
+                        <p>Thank you,</p>
+                        <p>Billing Team</p>
+                    `;
+                    break;
+                case 3:
+                    emailContent.innerHTML = `
+                        <h2>Password Reset Request</h2>
+                        <p>Dear user,</p>
+                        <p>We received a request to reset your password. If you did not make this request, please ignore this email. Otherwise, click the link below to reset your password: <a href="#">Reset Password</a></p>
+                        <p>Thank you,</p>
+                        <p>Support Team</p>
+                    `;
+                    break;
+                case 4:
+                    emailContent.innerHTML = `
+                        <h2>Urgent: Action Required</h2>
+                        <p>Dear user,</p>
+                        <p>There has been a security breach on your account. Please click the link below to secure your account: <a href="#">Secure Account</a></p>
+                        <p>Thank you,</p>
+                        <p>Admin</p>
+                    `;
+                    break;
+                default:
+                    emailContent.innerHTML = `<p>Email content not available.</p>`;
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
