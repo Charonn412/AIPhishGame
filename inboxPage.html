@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Simulation Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="inbox-container">
+        <header>
+            <h1>Phishing Simulation Game</h1>
+        </header>
+        <div class="email-list">
+            <div class="email-item" onclick="openEmail(1)">
+                <span class="sender">John Doe</span>
+                <span class="subject">Your account needs verification</span>
+                <span class="date">May 10</span>
+            </div>
+            <div class="email-item" onclick="openEmail(2)">
+                <span class="sender">Jane Smith</span>
+                <span class="subject">Invoice attached</span>
+                <span class="date">May 11</span>
+            </div>
+            <div class="email-item" onclick="openEmail(3)">
+                <span class="sender">Support Team</span>
+                <span class="subject">Password Reset Request</span>
+                <span class="date">May 12</span>
+            </div>
+            <div class="email-item" onclick="openEmail(4)">
+                <span class="sender">Admin</span>
+                <span class="subject">Urgent: Action Required</span>
+                <span class="date">May 13</span>
+            </div>
+        </div>
+        <div id="email-content" class="email-content">
+            <!-- Email content will be displayed here -->
+        </div>
+
+        <div id="user-input" class="user-input" >
+            <h3>Is this email a phishing attempt?</h3>
+            <input type="radio" id="yes" name="phishing" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="phishing" value="no">
+            <label for="no">No</label>
+            
+            <h3>Red Flags?</h3>
+            <input type="checkbox" id="urgency" name="redFlags" value="urgency">
+            <label for="urgency">Urgency</label><br>
+            <input type="checkbox" id="senderInconsistencies" name="redFlags" value="senderInconsistencies">
+            <label for="senderInconsistencies">Sender Inconsistencies</label><br>
+            <input type="checkbox" id="suspiciousAttachments" name="redFlags" value="suspiciousAttachments">
+            <label for="suspiciousAttachments">Suspicious Attachments</label><br>
+            <input type="checkbox" id="grammaticalErrors" name="redFlags" value="grammaticalErrors">
+            <label for="grammaticalErrors">Grammatical Errors</label><br>
+    
+            <button onclick="submitResponse()">Submit</button>
+        </div>
+        
+    </div>
+
+   
+    <script src="script.js"></script>
+</body>
+</html>
